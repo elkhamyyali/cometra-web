@@ -1,4 +1,4 @@
-import Layout from "@/components/organisms/Layout";
+import MainLayout from "@/components/templates/MainLayout";
 import "@/styles/globals.css";
 import { AppCacheProvider } from "@mui/material-nextjs/v13-pagesRouter";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
@@ -21,9 +21,9 @@ export default function App(props: AppProps) {
     <QueryClientProvider client={queryClient}>
       <AppCacheProvider {...props}>
         <ThemeProvider theme={theme}>
-          <Layout>
+          <MainLayout>
             <Component {...pageProps} />
-          </Layout>
+          </MainLayout>
         </ThemeProvider>
       </AppCacheProvider>
     </QueryClientProvider>
