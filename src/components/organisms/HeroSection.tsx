@@ -1,26 +1,25 @@
 import React from "react";
-import "tailwindcss/tailwind.css";
-import BluerForm from "../atoms/Form/Form";
-import TwoMainButtons from "../atoms/Form/TwoMainButtons";
+import HeroContent from "../molecules/HeroContent";
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
-      {/* Video Background */}
-      <div className="relative w-full h-full overflow-hidden">
-        <video
-          className="absolute top-0 left-0 w-full h-full object-cover"
-          src="assets/vd.mp4" // Adjust the path as needed
-          autoPlay
-          loop
-          muted
-        ></video>
+    <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Video */}
+      <video
+        src="assets/trip.mp4"
+        autoPlay
+        loop
+        muted
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-30"></div>
+
+      {/* Hero Content */}
+      <div className="relative z-10">
+        <HeroContent />
       </div>
-
-      {/* Form Above Video */}
-      <BluerForm />
-
-      {/* <TwoMainButtons /> */}
     </section>
   );
 };
